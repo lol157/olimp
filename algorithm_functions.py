@@ -70,7 +70,7 @@ def solve_algorithm(maps, coords):
     true_field = [x for xs in true_field for x in xs]
 
     
-    return true_field
+    return {"maps": true_field, "coords": coords}
         
     
     
