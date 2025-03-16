@@ -2,7 +2,7 @@ from vars import maps
 
 
 def solve_algorithm(maps, coords):
-    print(maps)
+    return {'maps': maps, 'coords': coords}
 
 
 if __name__ == '__main__':
