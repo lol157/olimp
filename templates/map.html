@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+
+    <body>
+        <nav>
+            <a href="./input">ввод</a>
+            <a href="./map">карта</a>
+        </nav>
+        <canvas id="rasterCanvas" style="width: 256px; height: 256px; border: 1px solid red"></canvas>
+
+        <br/><input type='checkbox' name="show_modules" id="show_modules">
+        <label>отобразить исследовательские модули</label>
+
+        <br/><input type='checkbox' name="show_bases" id="show_bases">
+        <label>отобразить базовые станции</label>
+
+        <br/><input type='checkbox' name="show_bases" id="show_bases_cover">
+        <label>отобразить базовые станции + покрытие</label>
+
+        <script src="{{ url_for('static', filename='scripts/map.js') }}"></script>
+    </body>
+
+
+</html>
