@@ -5,8 +5,12 @@ var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
 var data = imageData.data;
 
 // получение данных от сервера
-for(var i = 0; i < data.length; i++) {
-  data[i] = 100;
+const url='http://127.0.0.1:5001';
+let res_json = await fetch(url, {mode: "no-cors"});
+let res = await res_json.json();
+
+for (var i = 0; i < data.length; i++) {
+  data[i] = res['maps'][i];
 }
 // -------------------------------------
 

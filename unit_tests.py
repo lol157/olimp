@@ -1,4 +1,5 @@
 from colorama import Fore
+from requests_api import RequestsCollector
 
 
 def test(func, res_type, *args):
@@ -9,3 +10,9 @@ def test(func, res_type, *args):
             print(f'{Fore.RED}TEST FAILED')
     except:
         print(f'{Fore.RED}TEST FAILED')
+
+
+rc = RequestsCollector()
+
+test(rc.get_coords, list)
+test(rc.get_maps, list)
