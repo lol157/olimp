@@ -6,7 +6,12 @@ class RequestsCollector:
         self.url = r'https://olimp.miet.ru/ppo_it/api'
 
     def get_map(self):
-        return requests.get(self.url).json()['message']['data']
+        maps = []
+        while len(maps) != 16:
+            data = requests.get(self.url).json()['message']['data']
+            if data not in maps:
+                maps.append(data)
+        return maps
 
     def get_coords(self):
         return requests.get(self.url + '/coords').json()['message']
@@ -15,4 +20,4 @@ class RequestsCollector:
 if __name__ == '__main__':
     rc = RequestsCollector()
 
-    print(rc.get_coords())
+    print(rc.get_map())
